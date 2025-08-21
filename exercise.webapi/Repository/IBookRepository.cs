@@ -4,6 +4,14 @@ namespace exercise.webapi.Repository
 {
     public interface IBookRepository
     {
-        public Task<IEnumerable<Book>> GetAllBooks();
+        Task<Book> GetBook(int id);
+        Task<IEnumerable<Book>> GetAllBooks();
+        Task<Book> UpdateAsync(int id, Author author);
+
+        Task<Book> DeleteAsync(int id);
+
+        Task<Book> AddAsync(Book book);
+
+        Task<Author> GetAuthor(int id);
     }
 }
